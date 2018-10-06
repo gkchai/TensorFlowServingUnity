@@ -8,7 +8,7 @@ using [Inception](https://github.com/tensorflow/models/tree/master/research/ince
 and run TF-Serving Docker with Inception model server.
 
 ## TensorFlow Serving Unity Client
-- `Assets/Client.cs` is the Unity `C#` script with the request and response stub connecting 
+- [Client.cs](https://github.com/gkchai/TensorFlowServingUnity/blob/master/Assets/Scripts/Client.cs) is the Unity `C#` script with the request and response stub connecting 
 to the server.
 
 ## Examples
