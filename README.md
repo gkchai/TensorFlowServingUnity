@@ -12,6 +12,6 @@ and run TF-Serving Docker with Inception model server.
 to the server.
 
 ## Examples
-![example1](./ex1.jpg?raw=true "Example 1")
+![example1](ex1.jpg?raw=true "Example 1")
 
-![example2](./ex2.jpg?raw=true "Example 2")
+![example2](ex2.jpg?raw=true "Example 2")
