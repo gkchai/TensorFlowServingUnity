@@ -1,5 +1,4 @@
 // Inception TensorFlow-Serving client in C#
-
 using UnityEngine;
 using System.Collections;
 using Grpc.Core; //https://github.com/grpc/grpc/tree/master/src/csharp/experimental
@@ -9,11 +8,10 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-
 public class Client : MonoBehaviour {
-
+    
     // textures
-   	public Texture2D backgroundTexture;
+    public Texture2D backgroundTexture;
     public Texture2D imageTexture;
     public GUISkin skin;
     public GUIStyle style;
@@ -39,7 +37,6 @@ public class Client : MonoBehaviour {
                     SignatureName = "predict_images"
                 }
             };
-
             var imageTensor = TensorProtoBuilder.TensorProtoFromImage(imageData);
 
             // Add image tensor to request
@@ -60,8 +57,6 @@ public class Client : MonoBehaviour {
                 predictResult.Add(new Tuple<string, float>(classes[i], scores[i]));
             }
             return predictResult;
-
-       
         }
         catch (Exception e)
         {
@@ -83,24 +78,23 @@ public class Client : MonoBehaviour {
         imageTexture.LoadImage(imageBytes);
         backgroundTexture = Texture2D.whiteTexture;
         style.normal.background = new Texture2D(1, 1);
-   
     }
 
     void OnGUI() {
-        
-
-        // Draws a single image in a square the size of the screen
+ 
         int width = Screen.width;
-		int height = Screen.height;
-		int left = 0;
-		int top  = 0;
-
+	int height = Screen.height;
+	int left = 0;
+	int top  = 0;
 
         if (width > height)
-			width = height;
-		else
-			height = width;
-
+        {
+            width = height;
+        }
+        else
+        {
+            height = width;
+        }
 		left = Screen.width/2 - width/2;
 		top = Screen.height/2 - height/2;
 
@@ -124,6 +118,5 @@ public class Client : MonoBehaviour {
         }
 
         GUI.Box(new Rect(imageLeftPoint, imageTopPoint + imageHeight + 50, imageWidth, 200), resultString, style);
-
     }
 }
